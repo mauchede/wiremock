@@ -1,23 +1,23 @@
 ### Installation
 
-Pull the image `mauchede/wiremock`:
+Pull the image `timonier/wiremock`:
 
 ```bash
 # Get the latest image
-docker pull mauchede/wiremock
+docker pull timonier/wiremock
 
 # Or get a specific version
 
 # Get the version 1.57
-docker pull mauchede/wiremock:1.57
+docker pull timonier/wiremock:1.57
 ```
 
 ### Usage
 
-Run your container via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments. For example:
+Run your container via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
 
 ```bash
-docker run --name wiremock mauchede/wiremock:1.57 -v --port 80
+docker run --name wiremock timonier/wiremock:1.57 -v --port 80
 ```
 
 ### Contributing
@@ -34,6 +34,6 @@ __Note__: Use the script `bin/build` to test your modifications locally.
 
 * [command "docker pull"](https://docs.docker.com/reference/commandline/pull/)
 * [command "docker run"](https://docs.docker.com/reference/run/)
-* [image "mauchede/wiremock"](https://hub.docker.com/r/mauchede/wiremock/)
+* [image "timonier/wiremock"](https://hub.docker.com/r/timonier/wiremock/)
 * [wiremock](http://wiremock.org/)
 * [wiremock options](http://wiremock.org/running-standalone.html)

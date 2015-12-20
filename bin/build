@@ -2,8 +2,8 @@
 set -e
 cd "`dirname "$0"`/../src"
 
-[[ -z $IMAGE ]] && IMAGE="mauchede/wiremock"
-[[ -z $TAG ]] && TAG="1.57"
+IMAGE=${IMAGE:-timonier/wiremock}
+TAG=${TAG:-1.57}
 
 docker rmi $IMAGE:$TAG || :
 docker build -t $IMAGE:$TAG .
