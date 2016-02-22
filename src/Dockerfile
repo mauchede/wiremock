@@ -1,8 +1,8 @@
-FROM alpine:3.1
+FROM alpine:3.3
 MAINTAINER Morgan Auchede <morgan.auchede@gmail.com>
 
 ENV \
-    JAVA_VERSION=7.75.2.5.4 \
+    JAVA_VERSION=8.66.17 \
     WIREMOCK_VERSION=1.57
 
 RUN set -x \
@@ -15,12 +15,12 @@ RUN set -x \
     # Install packages
 
     && apk add \
-           $(resolve openjdk7-jre $JAVA_VERSION) \
+           $(resolve openjdk8-jre $JAVA_VERSION) \
 
     # Install wiremock
 
     && wget "http://repo1.maven.org/maven2/com/github/tomakehurst/wiremock/$WIREMOCK_VERSION/wiremock-$WIREMOCK_VERSION-standalone.jar" -P /usr/lib \
-    && ln -s /usr/lib/wiremock-$WIREMOCK_VERSION-standalone.jar /usr/lib/wiremock.jar \
+    && mv /usr/lib/wiremock-$WIREMOCK_VERSION-standalone.jar /usr/lib/wiremock.jar \
 
     # Clean
 
