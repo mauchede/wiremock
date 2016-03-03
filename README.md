@@ -1,8 +1,10 @@
-# Installation
+# README
+
+## Installation
 
 Pull the image `timonier/wiremock`:
 
-```bash
+```sh
 # Get the latest image
 docker pull timonier/wiremock
 
@@ -12,15 +14,15 @@ docker pull timonier/wiremock
 docker pull timonier/wiremock:1.57
 ```
 
-# Usage
+## Usage
 
 Run your container via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
 
-```bash
+```sh
 docker run --name wiremock timonier/wiremock:1.57 -v --port 80
 ```
 
-# Contributing
+## Contributing
 
 1. Fork it.
 2. Create your branch: `git checkout -b my-new-feature`.
@@ -30,7 +32,7 @@ docker run --name wiremock timonier/wiremock:1.57 -v --port 80
 
 __Note__: Use the script `bin/build` to test your modifications locally.
 
-# Links
+## Links
 
 * [command "docker pull"](https://docs.docker.com/reference/commandline/pull/)
 * [command "docker run"](https://docs.docker.com/reference/run/)

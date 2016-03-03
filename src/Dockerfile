@@ -2,20 +2,18 @@ FROM alpine:3.3
 MAINTAINER Morgan Auchede <morgan.auchede@gmail.com>
 
 ENV \
-    JAVA_VERSION=8.66.17 \
     WIREMOCK_VERSION=1.57
 
 RUN set -x \
 
     # Prepare system
 
-    && resolve() { echo $(apk search $1 | grep "$1-$2" | sed -e "s/$1-/$1=/g") ; } \
     && apk add -U \
 
     # Install packages
 
     && apk add \
-           $(resolve openjdk8-jre $JAVA_VERSION) \
+           openjdk8-jre \
 
     # Install wiremock
 
