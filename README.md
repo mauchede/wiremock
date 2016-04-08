@@ -16,7 +16,7 @@ docker pull timonier/wiremock:1.57
 
 ## Usage
 
-Run your container via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
+Run the application via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
 
 ```sh
 docker run --name wiremock timonier/wiremock:1.57 -v --port 80
