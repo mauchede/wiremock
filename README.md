@@ -5,7 +5,7 @@
 Pull the image `timonier/wiremock`:
 
 ```sh
-# Get the latest image
+# Get the latest image (version 1.57)
 docker pull timonier/wiremock
 
 # Or get a specific version
@@ -19,7 +19,10 @@ docker pull timonier/wiremock:1.57
 Run the application via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
 
 ```sh
-docker run --name wiremock timonier/wiremock:1.57 -v --port 80
+docker run \
+    -i \
+    -t \
+    timonier/wiremock -v --port 80
 ```
 
 ## Contributing
