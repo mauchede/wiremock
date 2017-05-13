@@ -1,28 +1,34 @@
 # README
 
+A web service test double for all occasions
+
 ## Installation
 
-Pull the image `timonier/wiremock`:
+Copy `bin/wiremock` into your executable folder (like `/usr/local/bin` or `$HOME/bin`):
 
 ```sh
-# Get the latest image (version 1.57)
-docker pull timonier/wiremock
+sudo curl --location --output /usr/local/bin/wiremock "https://github.com/timonier/wiremock/raw/master/bin/wiremock"
+sudo chmod +x /usr/local/bin/wiremock
+```
 
-# Or get a specific version
+Linux users can use the [installer](https://github.com/timonier/wiremock/blob/master/bin/installer):
 
-# Get the version 1.57
-docker pull timonier/wiremock:1.57
+```sh
+curl --location "https://github.com/timonier/wiremock/raw/master/bin/installer" | sudo sh -s install
 ```
 
 ## Usage
 
-Run the application via `docker run`. The [wiremock options](http://wiremock.org/running-standalone.html) can be passed as arguments:
+Run the command `wiremock`:
 
 ```sh
-docker run \
-    -i \
-    -t \
-    timonier/wiremock -v --port 80
+# See all wiremock options
+
+wiremock --help
+
+# Run wiremock
+
+wiremock --root-dir /tmp --verbose
 ```
 
 ## Contributing
@@ -37,8 +43,7 @@ __Note__: Use the script `bin/build` to test your modifications locally.
 
 ## Links
 
-* [command "docker pull"](https://docs.docker.com/reference/commandline/pull/)
-* [command "docker run"](https://docs.docker.com/reference/run/)
 * [image "timonier/wiremock"](https://hub.docker.com/r/timonier/wiremock/)
-* [wiremock](http://wiremock.org/)
-* [wiremock options](http://wiremock.org/running-standalone.html)
+* [timonier/dumb-entrypoint](https://github.com/timonier/dumb-entrypoint)
+* [timonier/version-lister](https://github.com/timonier/version-lister)
+* [tomakehurst/wiremock](https://github.com/tomakehurst/wiremock)
