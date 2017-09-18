@@ -6,16 +6,18 @@ LABEL \
 ENV \
     WIREMOCK_VERSION=latest
 
-RUN set -eux \
+RUN set -ex \
 
     # Install packages
 
     && apk add --no-cache --no-progress --virtual BUILD_DEPS \
            curl \
 
-    # Install dumb-entrypoint
+    # Install timonier/dumb-entrypoint
 
-    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/bin/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s install \
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/dumb-entrypoint/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/dumb-init/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
+    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/gosu/installer" | INSTALL_DIRECTORY="/usr/sbin" sh -s -- install \
 
     # Install wiremock
 
