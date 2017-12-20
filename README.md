@@ -4,13 +4,6 @@ A web service test double for all occasions
 
 ## Installation
 
-Copy `bin/wiremock` into your executable folder (like `/usr/local/bin` or `$HOME/bin`):
-
-```sh
-sudo curl --location --output /usr/local/bin/wiremock "https://github.com/timonier/wiremock/raw/master/bin/wiremock"
-sudo chmod +x /usr/local/bin/wiremock
-```
-
 Linux users can use the [installer](https://github.com/timonier/wiremock/blob/master/bin/installer):
 
 ```sh

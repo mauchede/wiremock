@@ -25,7 +25,7 @@ fi
 
 case "$1" in
     install )
-        curl --location --output /usr/local/bin/wiremock "https://github.com/timonier/wiremock/raw/master/bin/wiremock"
+        curl --location --output /usr/local/bin/wiremock "https://github.com/timonier/wiremock/raw/master/bin/cmd"
         chmod +x /usr/local/bin/wiremock
     ;;
 
