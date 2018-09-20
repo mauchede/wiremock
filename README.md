@@ -4,8 +4,6 @@ A web service test double for all occasions
 
 ## Installation
 
-Linux users can use the [installer](https://github.com/timonier/wiremock/blob/master/bin/installer):
-
 ```sh
 # Define installation folder
 
