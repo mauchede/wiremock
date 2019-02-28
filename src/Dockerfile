@@ -7,7 +7,7 @@ RUN set -e -u -x \
 \
     # Install packages
 \
-    && apk add --no-cache --no-progress --virtual BUILD_DEPS curl \
+    && apk add --no-cache --no-progress --virtual BUILD_DEPS bash curl \
 \
     # Install dumb-entrypoint
 \
