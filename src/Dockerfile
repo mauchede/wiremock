@@ -1,7 +1,7 @@
 FROM openjdk:jre-alpine
 
 LABEL \
-    maintainer="Morgan Auchede <morgan.auchede@gmail.com>"
+    maintainer="Morgan AUCHEDE <morgan.auchede@gmail.com>"
 
 RUN set -e -u -x \
 \
@@ -11,12 +11,12 @@ RUN set -e -u -x \
 \
     # Install dumb-entrypoint
 \
-    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/dumb-entrypoint/installer" | bash -s -- install \
-    && curl --location "https://github.com/timonier/dumb-entrypoint/raw/master/src/gosu/installer" | bash -s -- install \
+    && curl --location "https://gitlab.com/timonier/dumb-entrypoint/raw/master/src/dumb-entrypoint/installer" | bash -s -- install \
+    && curl --location "https://gitlab.com/timonier/dumb-entrypoint/raw/master/src/gosu/installer" | bash -s -- install \
 \
     # Install wiremock
 \
-    && export $(curl --location "https://github.com/timonier/version-lister/raw/generated/tomakehurst/wiremock/latest" | xargs) \
+    && export $(curl --location "https://gitlab.com/timonier/version-lister/raw/generated/tomakehurst/wiremock/latest" | xargs) \
     && mkdir -p /opt/wiremock \
     && curl --location --output /opt/wiremock/wiremock.jar "${WIREMOCK_RELEASE}" \
 \
