@@ -7,23 +7,16 @@ RUN set -e -u -x \
 \
     # Install packages
 \
-    && apk add --no-cache --no-progress --virtual BUILD_DEPS bash curl \
-\
-    # Install dumb-entrypoint
-\
-    && curl --location "https://gitlab.com/timonier/dumb-entrypoint/raw/master/src/dumb-entrypoint/installer" | bash -s -- install \
-    && curl --location "https://gitlab.com/timonier/dumb-entrypoint/raw/master/src/gosu/installer" | bash -s -- install \
+    && apk add --no-cache --no-progress --virtual BUILD_DEPS curl \
+    && apk add --no-cache --no-progress bash ca-certificates tzdata \
 \
     # Install wiremock
 \
-    && export $(curl --location "https://gitlab.com/timonier/version-lister/raw/generated/tomakehurst/wiremock/latest" | xargs) \
     && mkdir -p /opt/wiremock \
-    && curl --location --output /opt/wiremock/wiremock.jar "${WIREMOCK_RELEASE}" \
+    && curl --location --output /opt/wiremock/wiremock.jar "https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/2.27.2/wiremock-standalone-2.27.2.jar" \
 \
     # Clean
 \
     && apk del --no-progress BUILD_DEPS
 
 COPY rootfs/ /
-
-ENTRYPOINT [ "dumb-entrypoint" ]
